@@ -1,0 +1,27 @@
+{
+  "name": "timey-wimey",
+  "version": "1.0.0",
+  "description": "A time tracking app",
+  "main": "main.js",
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "moment": "^2.18.1"
+  },
+  "devDependencies": {
+    "electron": "^1.7.6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jetilling/timey-wimey.git"
+  },
+  "author": "Joshua Tilling",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jetilling/timey-wimey/issues"
+  },
+  "homepage": "https://github.com/jetilling/timey-wimey#readme"
+}
