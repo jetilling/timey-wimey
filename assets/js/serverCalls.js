@@ -1,4 +1,4 @@
-function get(url, cb) {
+let get = (url, cb) => {
   var xhttp;
   xhttp=new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -10,7 +10,7 @@ function get(url, cb) {
   xhttp.send();
 }
 
-function post(url, cb) {
+let post = (url, data, cb) => {
   var xhttp;
   xhttp=new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -19,10 +19,25 @@ function post(url, cb) {
     }
  };
   xhttp.open("POST", url, true);
-  xhttp.send();
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send(data);
+}
+
+let put = (url, data, cb) => {
+  var xhttp;
+  xhttp=new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      cb(this);
+    }
+ };
+  xhttp.open("PUT", url, true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send(data);
 }
 
 module.exports = {
   get: get,
-  post: post
+  post: post,
+  put: put
 }

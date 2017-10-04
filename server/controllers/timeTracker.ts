@@ -22,12 +22,32 @@ let timeRouter = express.Router();
 
 let clockIn = (req: express.Request, res: express.Response, next: express.NextFunction) => {
 
-  let job = req.body.jobId
+  let job = req.body.jobId 
+  let time = req.body.time
 
   req.app.get('db').time.insert({
-    name: job
-  }).then(res.send({success: true}))
+    job_id: job,
+    clock_in: time
+  }).then((time: types.ITimeRaw) => {
+    res.send({success: true, timeId: time.id})
+  })
   .catch((err: types.IError) => next(err))
+}
+
+let clockOut = (req: express.Request, res: express.Response, next: express.NextFunction) => {
+
+  let job = req.body.jobId 
+  let time = req.body.time
+  
+  req.app.get('db').time.update({
+    job_id: job,
+    clock_in: time
+  }).then((time: types.ITimeRaw) => {
+    res.send({success: true})
+  })
+  .catch((err: types.IError) => next(err))
+
+
 }
 
 /*=====================Helper Function==========================*/

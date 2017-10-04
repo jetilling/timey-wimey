@@ -1,8 +1,13 @@
 
-var renderCard = function(title, description) {
-  return "<div class='row'><div class='col s12 m6'><div class='card blue-grey darken-1'><div class='card-content white-text'><span class='card-title' id='card-title'>" + title + "</span><p id='card-description'>" + description + "</p></div><div class='card-action'><a href='#'>Clock In</a><a href='#'>Clock Out</a></div></div></div></div>"
+var jobs = function(dataGroup) {
+  let finalHtml = '<div>';
+  for (var i = 0; i < dataGroup.length; i++) {
+    finalHtml += `<h4>${dataGroup[i].name}</h4><button class="btn" jobId=${dataGroup[i].id} id="clock-in-btn">Clock In</button><button class="btn" jobId=${dataGroup[i].id} id="clock-out-btn">Clock Out</button>`
+  }
+  finalHtml += '</div>'
+  return finalHtml
 }
 
 module.exports = {
-  renderCard: renderCard
+  jobs: jobs
 }

@@ -44,6 +44,7 @@ export class WebApi
    */
   private configureMiddleware(app: express.Express)
   {
+    app.use(bodyParser.urlencoded({ extended: false }));
     app.use(bodyParser.json());
     massive(process.env.DB_CONNECT).then(db => {
       app.set('db', db);

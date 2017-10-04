@@ -1,7 +1,20 @@
 body {
-  background: #a6b8c7
+  background: mintcream
 }
 
 #nav-bar {
   background: #003b6f
+}
+
+#currentTime {
+  display: inline-block;
+  font-size: 30px;
+}
+
+#currentSeconds {
+  display: inline-block;
+}
+
+#clock-out-btn {
+  display: none
 }
