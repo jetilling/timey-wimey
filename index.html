@@ -11,18 +11,45 @@
   <body>
       <nav>
           <div class="nav-wrapper" id="nav-bar">
-            <a href="#" class="brand-logo center" id="title">Wibbly Wobbly Timey Wimey</a>
+            <a href="#" class="brand-logo left" id="title">Wibbly Wobbly Timey Wimey</a>
+            <a href="#" class="right">Add Job</a>
           </div>
         </nav>
-      <div class='row center-align'>
-        <div id="currentTime">...</div>
-        <div id="currentSeconds"></div>
+        <ul class="side-nav fixed side-links">
+          <div class="row">
+            <h5>Current Time</h5>
+            <div id="currentTime">...</div>
+            <div id="currentSeconds"></div>
+          </div>
+          <hr>
+          <div class="row">
+            <h5>Total week time</h5>
+            <div id="currentWeekTime">...</div>
+            <div id="currentWeekSeconds"></div>
+          </div>
+          <hr>
+          <div class="row">
+            <h5>Time left in the day</h5>
+            <div id="timeLeftInDay">...</div>
+            <div id="timeLeftInDaySeconds"></div>
+          </div>
+          <hr>
+          <div class="row">
+            <h5>Estimated end time</h5>
+            <div id="estimatedEndTime">...</div>
+            <div id="estimatedEndTimeSeconds"></div>
+          </div>
+          <hr>
+        </ul>
+      <div class="main">
+        <div class='row center-align'>
+        </div>
+        <div class="row">
+            <div id="jobs"></div>
+        </div>
+        <div class="container" id="container">
+        </div>
       </div>
-      <div class="row">
-          <div id="jobs"></div>
-      </div>
-    <div class="container" id="container">
-    </div>
   </body>
   <script>
     require('./renderer.js')
