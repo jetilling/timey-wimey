@@ -13,6 +13,7 @@ let get = (url, cb) => {
 let post = (url, data, cb) => {
   var xhttp;
   var paramString;
+  let prop;
 
   for (prop in data) {
     if (paramString && paramString.length > 0) paramString += `&${prop}=${data[prop]}`
@@ -34,7 +35,8 @@ let post = (url, data, cb) => {
 let put = (url, data, cb) => {
   var xhttp;
   var paramString;
-  
+  let prop;
+
   for (prop in data) {
     if (paramString && paramString.length > 0) paramString += `&${prop}=${data[prop]}`
     else paramString = `${prop}=${data[prop]}`
